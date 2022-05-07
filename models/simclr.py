@@ -10,7 +10,7 @@ class SimClr(nn.Module):
     def __init__(self,name,proj_dim):
         super().__init__()
         
-        self.encoder = get_resnet(name)
+        self.encoder = get_resnet(name,False)
         
         self.encoder.conv1 = nn.Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), bias=False)
         self.encoder.maxpool = Identity()

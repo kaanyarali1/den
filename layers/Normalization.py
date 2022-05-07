@@ -8,6 +8,6 @@ class Normalize(nn.Module):
         self.lnorm = lnorm
     
     def forward(self, x):
-        norm = x.norm(dim=1, p=self.lnorm,keepdim=True).detach()
+        norm = x.norm(dim=1, p=self.lnorm,keepdim=True)
         out = x / (norm)
         return out
